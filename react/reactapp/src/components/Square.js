@@ -1,20 +1,29 @@
-import React,{useState, useReducer} from "react";
+import React,{useState} from "react";
 
 function Square(){
 
-    const [counter, setCounter] = useState(1);
+    const [counter, setCounter] = useState();
+    const [isActive, setIsActive] = useState(false);
+    //let code = 0;
 
     let iterator = () => {
-        setCounter(counter + 1);
+        handleClick();
+        handleClickNumber();
+    };
+    
+    const handleClick = () => {
+        setIsActive(current => !current);
+        setIsActive(true); 
+    };
+
+    const handleClickNumber = () => {
+        setCounter(counter);
     };
 
     return (
-           <div className="Square">
-            <div className="counter">
-                {counter}
-            </div>
+           <div className="Square" style={{backgroundColor: isActive ? 'red' : 'blue'}} onClick={iterator}>
+             {counter}
            </div> 
-        
     );
 }
 
