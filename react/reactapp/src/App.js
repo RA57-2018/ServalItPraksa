@@ -1,6 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useReducer} from "react";
 import './App.css';
 import Square from "./components/Square";
+
 
 const App = () => {
 
