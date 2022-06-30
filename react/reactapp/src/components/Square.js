@@ -4,7 +4,7 @@ function Square(){
 
     const [counter, setCounter] = useState();
     const [isActive, setIsActive] = useState(false);
-    //let code = 0;
+    const countArr = [1, 2, 3];
 
     let iterator = () => {
         handleClick();
@@ -17,11 +17,14 @@ function Square(){
     };
 
     const handleClickNumber = () => {
-        setCounter(counter);
+        for(counter in countArr.length){    
+            setCounter(counter);
+        }
+        console.log(counter);
     };
 
     return (
-           <div className="Square" style={{backgroundColor: isActive ? 'red' : 'blue'}} onClick={iterator}>
+           <div className="Square" style={{backgroundColor: isActive ? 'red' : 'blue'}} onClick={iterator} >
              {counter}
            </div> 
     );

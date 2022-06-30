@@ -10,25 +10,29 @@ const App = () => {
   { code: 3, name: 'Square3' }
   ];
 */
-  const [value, setValue] = useState([
+  const [value, setValues] = useState([
     { code: 1, name: 'Square1' },
     { code: 2, name: 'Square2' },
     { code: 3, name: 'Square3' }
   ]);
 
-  /*const [number, setNumber] = useState();
+  // let counter = 0;
 
-  const handleClickNumber = (value) => {
-    for(let i=1; i<3; i++){
-      number = value[i].code;
-      setNumber(number);
-    }
-  };*/
+  // const handleClickOnNumber = () => {
+  //   console.log(value.code);  //1,2,3 ispise
+  //   setValues(current => !current);
+  //   for(counter in value.code){
+  //     counter = value.code;
+  //     console.log(counter);
+  //     setValues(counter);
+  //   }
+  // };
 
   return (
     <div className="App">
       {
         value.map((values, index) => {
+          console.log(values.code);
           return <Square key={index} />
         })
       }
